@@ -12,6 +12,8 @@ const Form = () => {
         date: "",
     });
 
+    const [errors, setErrors] = useState<{ [key: string]: string }>({});
+
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
         setFormData((prev) => ({
@@ -22,6 +24,43 @@ const Form = () => {
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+
+        let newErrors: { [key: string]: string } = {};
+
+        // fullname
+        if (!formData.fullname.trim()) newErrors.fullname = "Full name is required";
+
+        // email
+        if (!formData.email.trim()) {
+            newErrors.email = "Email is required";
+        } else if (!/\S+@\S+\.\S+/.test(formData.email)) { /// regular expression - regex
+            newErrors.email = "Invalid email format";
+        }
+
+        // contact
+        if (!formData.contact.trim()) {
+            newErrors.contact = "Phone number is required";
+        } else if (formData.contact.length !== 11) {
+            newErrors.contact = "Phone number must be 11 digits"
+        }
+
+        // destination
+        if (!formData.destination.trim()) newErrors.destination = "Destination is required";
+
+        // traveler number
+        if (!formData.travelerNumber.trim() || parseInt(formData.travelerNumber) < 1) {
+            newErrors.travelerNumber = "At least 1 traveller is required";
+        }
+
+        // date
+        if (!formData.date) newErrors.date = "Date is required";
+
+        if (Object.keys(newErrors).length > 0) {
+            setErrors(newErrors);
+            return;
+        }
+
+        setErrors({});
         console.log("Form Data:", formData);
     };
 
@@ -34,6 +73,7 @@ const Form = () => {
             travelerNumber: "",
             date: "",
         });
+        setErrors({});
     };
 
     return (
@@ -57,7 +97,6 @@ const Form = () => {
                             name="fullname"
                             placeholder="Enter Full Name"
                             onChange={handleChange}
-                            required
                             value={formData.fullname}
                             className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
                         />
