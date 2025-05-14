@@ -62,6 +62,7 @@ const Form = () => {
 
         setErrors({});
         console.log("Form Data:", formData);
+        alert("Form Submitted successfully");
     };
 
     const handleReset = () => {
@@ -88,99 +89,112 @@ const Form = () => {
                 <div className="space-y-6"
                 >
                     {/* Full Name */}
-                    <div className="flex items-center gap-4">
-                        <label htmlFor="fullname" className="w-80 text-md font-medium text-gray-700">
-                            Full Name<span className="text-red-500"> *</span>
-                        </label>
-                        <input
-                            type="text"
-                            name="fullname"
-                            placeholder="Enter Full Name"
-                            onChange={handleChange}
-                            value={formData.fullname}
-                            className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
-                        />
+                    <div>
+                        <div className="flex items-center gap-4">
+                            <label htmlFor="fullname" className="w-80 text-md font-medium text-gray-700">
+                                Full Name<span className="text-red-500"> *</span>
+                            </label>
+                            <input
+                                type="text"
+                                name="fullname"
+                                placeholder="Enter Full Name"
+                                onChange={handleChange}
+                                value={formData.fullname}
+                                className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+                            />
+                        </div>
+                        {errors.fullname && <p className="text-red-500 text-sm mt-1">{errors.fullname}</p>}
                     </div>
 
                     {/* Email */}
-                    <div className="flex items-center gap-4">
-                        <label htmlFor="email" className="w-80 text-md font-medium text-gray-700">
-                            Email<span className="text-red-500"> *</span>
-                        </label>
-                        <input
-                            type="email"
-                            name="email"
-                            placeholder="Enter Email"
-                            onChange={handleChange}
-                            required
-                            value={formData.email}
-                            className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
-                        />
+                    <div>
+                        <div className="flex items-center gap-4">
+                            <label htmlFor="email" className="w-80 text-md font-medium text-gray-700">
+                                Email<span className="text-red-500"> *</span>
+                            </label>
+                            <input
+                                type="email"
+                                name="email"
+                                placeholder="Enter Email"
+                                onChange={handleChange}
+                                value={formData.email}
+                                className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+                            />
+                        </div>
+                        {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
                     </div>
 
                     {/* Phone Number */}
-                    <div className="flex items-center gap-4">
-                        <label htmlFor="contact" className="w-80 text-md font-medium text-gray-700">
-                            Phone Number<span className="text-red-500"> *</span>
-                        </label>
-                        <input
-                            type="tel"
-                            name="contact"
-                            placeholder="Enter Contact Number"
-                            onChange={handleChange}
-                            required
-                            value={formData.contact}
-                            maxLength={11}
-                            className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
-                        />
+                    <div>
+                        <div className="flex items-center gap-4">
+                            <label htmlFor="contact" className="w-80 text-md font-medium text-gray-700">
+                                Phone Number<span className="text-red-500"> *</span>
+                            </label>
+                            <input
+                                type="tel"
+                                name="contact"
+                                placeholder="Enter Contact Number"
+                                onChange={handleChange}
+                                value={formData.contact}
+                                maxLength={11}
+                                className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+                            />
+                        </div>
+                        {errors.contact && <p className="text-red-500 text-sm mt-1">{errors.contact}</p>}
                     </div>
 
                     {/* Destination */}
-                    <div className="flex items-center gap-4">
-                        <label htmlFor="destination" className="w-80 text-md font-medium text-gray-700">
-                            Destination<span className="text-red-500">* </span>
-                        </label>
-                        <input
-                            type="text"
-                            name="destination"
-                            placeholder="Enter your destination"
-                            onChange={handleChange}
-                            required
-                            value={formData.destination}
-                            className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
-                        />
+                    <div>
+                        <div className="flex items-center gap-4">
+                            <label htmlFor="destination" className="w-80 text-md font-medium text-gray-700">
+                                Destination<span className="text-red-500">* </span>
+                            </label>
+                            <input
+                                type="text"
+                                name="destination"
+                                placeholder="Enter your destination"
+                                onChange={handleChange}
+                                value={formData.destination}
+                                className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+                            />
+                        </div>
+                        {errors.destination && <p className="text-red-500 text-sm mt-1">{errors.destination}</p>}
                     </div>
 
                     {/* Travelers */}
-                    <div className="flex items-center gap-4">
-                        <label htmlFor="travelerNumber" className=" w-80 text-md font-medium text-gray-700">
-                            Number of Travelers<span className="text-red-500"> *</span>
-                        </label>
-                        <input
-                            type="number"
-                            name="travelerNumber"
-                            placeholder="3"
-                            onChange={handleChange}
-                            min={1}
-                            required
-                            value={formData.travelerNumber}
-                            className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
-                        />
+                    <div>
+                        <div className="flex items-center gap-4">
+                            <label htmlFor="travelerNumber" className=" w-80 text-md font-medium text-gray-700">
+                                Number of Travelers<span className="text-red-500"> *</span>
+                            </label>
+                            <input
+                                type="number"
+                                name="travelerNumber"
+                                placeholder="3"
+                                onChange={handleChange}
+                                min={1}
+                                value={formData.travelerNumber}
+                                className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+                            />
+                        </div>
+                        {errors.travelerNumber && <p className="text-red-500 text-sm mt-1">{errors.travelerNumber}</p>}
                     </div>
 
                     {/* Date */}
-                    <div className="flex items-center gap-4">
-                        <label htmlFor="date" className="w-80 text-md font-medium text-gray-700">
-                            Travel Date<span className="text-red-500"> *</span>
-                        </label>
-                        <input
-                            type="date"
-                            name="date"
-                            onChange={handleChange}
-                            required
-                            value={formData.date}
-                            className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
-                        />
+                    <div>
+                        <div className="flex items-center gap-4">
+                            <label htmlFor="date" className="w-80 text-md font-medium text-gray-700">
+                                Travel Date<span className="text-red-500"> *</span>
+                            </label>
+                            <input
+                                type="date"
+                                name="date"
+                                onChange={handleChange}
+                                value={formData.date}
+                                className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+                            />
+                        </div>
+                        {errors.date && <p className="text-red-500 text-sm mt-1">{errors.date}</p>}
                     </div>
                 </div>
 
