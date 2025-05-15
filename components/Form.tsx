@@ -62,6 +62,12 @@ const Form = () => {
 
         setErrors({});
         console.log("Form Data:", formData);
+
+        // Saving input data to localstorage
+        localStorage.setItem("formData", JSON.stringify(formData));
+
+
+
         alert("Form Submitted successfully");
     };
 
