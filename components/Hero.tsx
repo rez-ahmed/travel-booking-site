@@ -7,7 +7,7 @@ const Hero = () => {
             style={{ backgroundImage: "url('/homepage_bg.jpg')" }}
         >
             {/* Overlay */}
-            <div className="absolute inset-0 bg-black/30"></div>
+            <div className="absolute inset-0 bg-black/20"></div>
 
             {/* Content */}
             <div className="relative z-10 flex flex-col items-center justify-center text-yellow-50 text-center px-4 ">

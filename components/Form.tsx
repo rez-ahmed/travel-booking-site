@@ -84,8 +84,8 @@ const Form = () => {
     };
 
     return (
-        <div className="min-h-screen bg-gray-100 px-4 rounded-lg flex flex-col items-center justify-center mt-8">
-            <h1 className="text-3xl md:text-4xl font-bold text-gray-700 mb-8 text-center">
+        <div className="min-h-screen bg-gray-100 p-10 m-0 rounded-lg flex flex-col items-center justify-center">
+            <h1 className="text-3xl md:text-4xl font-bold text-gray-700 mb-8 mt-0 pt-0 text-center">
                 Fill the form to book your trip!
             </h1>
 
