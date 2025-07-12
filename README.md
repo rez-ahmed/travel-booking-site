@@ -1,4 +1,4 @@
-# Travello - Trip Booking Form
+# Travello - Trip Booking Site
 
 Travello is a simple and responsive trip booking form built with **Next.js** and **Tailwind CSS**. Users can fill out their travel information including full name, email, destination, number of travelers, and preferred travel date.
 
